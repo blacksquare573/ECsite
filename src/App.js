@@ -1,10 +1,10 @@
 import "./App.css";
-import RecommendGoods from "./components/RecommendGoods/RecommendGoods";
+import CategoriesMenu from "./components/Categories/CategoriesMenu";
 
 function App() {
   return (
     <div className="App">
-      <RecommendGoods />
+      <CategoriesMenu />
     </div>
   );
 }

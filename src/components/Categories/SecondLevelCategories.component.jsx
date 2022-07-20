@@ -1,13 +1,9 @@
-const SecondLevelCategories = (second) => {
+import "./SecondLevelCategories.css";
+
+const SecondLevelCategories = ({ second }) => {
   const { categoryName } = second;
 
-  return (
-    <div>
-      <li>
-        <a>{categoryName}</a>
-      </li>
-    </div>
-  );
+  return <li className="second-level-categories">{categoryName}</li>;
 };
 
 export default SecondLevelCategories;
