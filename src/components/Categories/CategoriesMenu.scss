@@ -11,7 +11,7 @@
   padding: 0 15px;
   box-sizing: border-box;
   background-color: #e6e6e6;
-  .first-list-background {
+  .category-bar {
     display: block;
     position: relative;
     width: 240px;
@@ -19,11 +19,11 @@
     text-align: center;
     line-height: 50px;
     background-color: #f6f6f6;
-    &:hover + .categories-border {
+    &:hover + .categories-background {
       display: block;
     }
   }
-  .categories-border {
+  .categories-background {
     display: none;
     position: relative;
     width: 950px;

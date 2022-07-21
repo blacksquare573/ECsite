@@ -6,8 +6,9 @@ const FirstLevelCategories = ({ first }) => {
 
   return (
     <li className="first-level-categories">
-      <p>{categoryName}</p>
+      <div className="first-category-head">{categoryName}</div>
       <div className="second-background">
+        <div>{categoryName}</div>
         <ul className="second-list">
           {subList.map((second) => (
             <SecondLevelCategories key={second.categoryId} second={second} />

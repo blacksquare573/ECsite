@@ -16,12 +16,12 @@ const CategoriesMenu = () => {
     <div>
       <div className="navigation-bar">
         {/*background*/}
-        <div className="first-list-background">
+        <div className="category-bar">
           {/*relation:absolute*/}
           カテゴリ
         </div>
 
-        <div className="categories-border">
+        <div className="categories-background">
           <ul className="first-list">
             {categories.map((first) => (
               <FirstLevelCategories key={first.categoryId} first={first} />

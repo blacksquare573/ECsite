@@ -12,7 +12,7 @@
   box-sizing: border-box;
   background-color: #e6e6e6;
 }
-.navigation-bar .first-list-background {
+.navigation-bar .category-bar {
   display: block;
   position: relative;
   width: 240px;
@@ -21,10 +21,10 @@
   line-height: 50px;
   background-color: #f6f6f6;
 }
-.navigation-bar .first-list-background:hover + .categories-border {
+.navigation-bar .category-bar:hover + .categories-background {
   display: block;
 }
-.navigation-bar .categories-border {
+.navigation-bar .categories-background {
   display: none;
   position: relative;
   width: 950px;
@@ -34,10 +34,10 @@
   border-top-width: 0;
   background-color: #fff;
 }
-.navigation-bar .categories-border:hover {
+.navigation-bar .categories-background:hover {
   display: block;
 }
-.navigation-bar .categories-border .first-list {
+.navigation-bar .categories-background .first-list {
   overflow: auto;
   overflow-x: hidden;
   width: 240px;
