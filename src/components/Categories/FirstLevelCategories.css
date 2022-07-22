@@ -10,15 +10,10 @@
   display: block;
 }
 .first-level-categories .first-category-head {
-  display: block;
   margin-left: 30px;
-}
-.first-level-categories .first-category-head:hover + .second-background {
-  display: block;
 }
 .first-level-categories .second-background {
   display: none;
-  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 223px;
@@ -29,8 +24,19 @@
 .first-level-categories .second-background:hover {
   display: block;
 }
+.first-level-categories .second-background .second-title {
+  display: flex;
+  margin-left: 80px;
+}
+.first-level-categories .second-background .second-title .category-img {
+  width: 80px;
+  height: 80px;
+}
+.first-level-categories .second-background .second-title .second-title-text {
+  padding-top: 20px;
+  margin-left: 20px;
+}
 .first-level-categories .second-background .second-list {
   display: flex;
   flex-wrap: wrap;
-  list-style-type: none;
 }/*# sourceMappingURL=FirstLevelCategories.css.map */

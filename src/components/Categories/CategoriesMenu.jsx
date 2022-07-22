@@ -1,7 +1,8 @@
 import FirstLevelCategories from "./FirstLevelCategories.component";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import axios from "axios";
 import "./CategoriesMenu.css";
+import { Outlet } from "react-router-dom";
 
 const CategoriesMenu = () => {
   const [categories, setCategories] = useState([]);
@@ -13,15 +14,16 @@ const CategoriesMenu = () => {
   }, []);
 
   return (
-    <div>
+    <Fragment>
       <div className="navigation-bar">
         {/*background*/}
         <div className="category-bar">
-          {/*relation:absolute*/}
+          {/*relation:relative*/}
           カテゴリ
         </div>
 
         <div className="categories-background">
+          {/*relation:relative*/}
           <ul className="first-list">
             {categories.map((first) => (
               <FirstLevelCategories key={first.categoryId} first={first} />
@@ -29,7 +31,8 @@ const CategoriesMenu = () => {
           </ul>
         </div>
       </div>
-    </div>
+      <Outlet />
+    </Fragment>
   );
 };
 

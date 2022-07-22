@@ -1,10 +1,10 @@
 import "./App.css";
-import CategoriesMenu from "./components/Categories/CategoriesMenu";
+import Home from "./routes/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      <CategoriesMenu />
+      <Home />
     </div>
   );
 }
