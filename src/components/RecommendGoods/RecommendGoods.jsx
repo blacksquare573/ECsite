@@ -1,4 +1,4 @@
-import GoodsCards from "../GoodsCards/GoodsCards.component";
+import RecommendGoodsCards from "./RecommendGoodsCards.component";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./RecommendGoods.css";
@@ -20,7 +20,7 @@ const RecommendGoods = () => {
       <h1>おすすめ商品</h1>
       <ul className="goods">
         {rec.map((goodsInfo) => (
-          <GoodsCards key={goodsInfo.goodsId} goodsInfo={goodsInfo} />
+          <RecommendGoodsCards key={goodsInfo.goodsId} goodsInfo={goodsInfo} />
         ))}
       </ul>
     </div>

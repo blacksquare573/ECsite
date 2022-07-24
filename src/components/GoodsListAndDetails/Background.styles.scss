@@ -1,0 +1,30 @@
+.goods-list-body-area {
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+  .swiper-container {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .goods-list-background {
+    white-space: nowrap;
+    .background-left {
+      display: inline-block;
+      width: 360px;
+      margin-right: 40px;
+      .details-bar-container {
+        background-color: #f6f6f6;
+      }
+    }
+    .background-right {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 400px);
+      .goods-list-container {
+        white-space: normal;
+      }
+    }
+  }
+}

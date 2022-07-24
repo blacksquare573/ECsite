@@ -1,13 +1,23 @@
-.navigation-bar {
+.navigation-bar-container {
+  width: 100%;
+  height: 50px;
+  background-color: #e6e6e6;
+}
+.navigation-bar-container .navigation-bar {
   display: block;
   position: absolute;
   width: 100%;
   height: 50px;
-  padding: 0 10vw;
   text-align: center;
-  background-color: #e6e6e6;
 }
-.navigation-bar .category-bar {
+.navigation-bar-container .navigation-bar .categories-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+}
+.navigation-bar-container .navigation-bar .categories-container .category-bar {
   display: block;
   position: relative;
   width: 240px;
@@ -15,22 +25,22 @@
   line-height: 50px;
   background-color: #f6f6f6;
 }
-.navigation-bar .category-bar:hover + .categories-background {
+.navigation-bar-container .navigation-bar .categories-container .category-bar:hover + .categories-background {
   display: block;
 }
-.navigation-bar .categories-background {
+.navigation-bar-container .navigation-bar .categories-container .categories-background {
   display: none;
   position: relative;
-  width: 950px;
+  width: 1240px;
   height: 300px;
   border: 1px solid #dbdbdb;
   border-top-width: 0;
   background-color: #fff;
 }
-.navigation-bar .categories-background:hover {
+.navigation-bar-container .navigation-bar .categories-container .categories-background:hover {
   display: block;
 }
-.navigation-bar .categories-background .first-list {
+.navigation-bar-container .navigation-bar .categories-container .categories-background .first-list {
   overflow: auto;
   overflow-x: hidden;
   width: 240px;

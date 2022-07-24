@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "./ChooseCategory.styles.css";
+
 const ChooseCategory = () => {
   return (
     <div className="choose-category-container">

@@ -1,0 +1,13 @@
+.swiper-bar-container {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  white-space: nowrap;
+}
+.swiper-bar-container .swiper-bar {
+  display: inline-block;
+  height: 100%;
+}
+.swiper-bar-container .swiper-bar .swiper-item {
+  display: inline-block;
+}/*# sourceMappingURL=Swiper.styles.css.map */

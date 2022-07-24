@@ -1,5 +1,5 @@
-import "./GoodsCards.styles.css";
-const GoodsCards = ({ goodsInfo }) => {
+import "./RecommendGoodsCards.styles.css";
+const RecommendGoodsCards = ({ goodsInfo }) => {
   const { goodsId, goodsName, goodsCoverImg, sellingPrice } = goodsInfo;
 
   return (
@@ -14,4 +14,4 @@ const GoodsCards = ({ goodsInfo }) => {
   );
 };
 
-export default GoodsCards;
+export default RecommendGoodsCards;
