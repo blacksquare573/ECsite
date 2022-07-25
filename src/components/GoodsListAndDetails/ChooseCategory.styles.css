@@ -3,4 +3,7 @@
 }
 .choose-category-container .subcategories-container {
   padding: 20px 30px;
+}
+.choose-category-container .category-title {
+  margin-bottom: 15px;
 }/*# sourceMappingURL=ChooseCategory.styles.css.map */

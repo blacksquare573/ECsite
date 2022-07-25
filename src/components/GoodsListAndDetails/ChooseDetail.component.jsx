@@ -1,23 +1,11 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import "./ChooseDetail.styles.css";
-const ChooseDetail = () => {
-  const [details, setDetails] = useState([]);
-  const [subCategories, setSubCategories] = useState([]);
+import GoodsDetails from "./GoodsDetails.component";
 
-  useEffect(() => {
-    axios
-      .post("http://localhost:8080/itemList", {
-        categoryName: "家电",
-        page: 1,
-        orderBy: "selling_price",
-        ascOrDesc: "asc",
-      })
-      .then((response) => {
-        console.log(response.data.data);
-      });
-  }, []);
-
+const ChooseDetail = ({
+  goodsDetailsList,
+  detailFilterList,
+  setDetailFilterList,
+}) => {
   return (
     <div className="choose-detail-container">
       <h2 className="choose-detail-title">条件で絞り込む</h2>
@@ -26,9 +14,20 @@ const ChooseDetail = () => {
           <h3 className="details-choosing-title">現在絞り込んでいる条件</h3>
           {/* detailsChoosing.map tag1,tag2,tag3 */}
         </div>
-        <button className="details-clear-button">clear button</button>
+        <div className="details-clear-button-container">
+          <button className="details-clear-button">全条件をクリア</button>
+        </div>
       </div>
-      <div className="details-container">{/* details.map */}</div>
+      <div className="details-containers-area">
+        {goodsDetailsList.map((goodsDetails, index) => (
+          <GoodsDetails
+            key={index}
+            goodsDetails={goodsDetails}
+            detailFilterList={detailFilterList}
+            setDetailFilterList={setDetailFilterList}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -33,6 +33,8 @@
   height: 80px;
 }
 .first-level-categories .second-background .second-title .second-title-text {
+  font-size: 1.6rem;
+  font-weight: bold;
   padding-top: 20px;
   margin-left: 20px;
 }

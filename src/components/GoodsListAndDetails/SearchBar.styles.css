@@ -1,3 +1,28 @@
 .search-bar-container {
+  display: flex;
+  border-top: 2px solid #009e96;
+  background-color: #f7f7f7;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 35px;
+  padding: 5px 20px;
+}
+.search-bar-container .number-of-goods {
+  flex: 1 1;
+}
+.search-bar-container .sort-by-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-bar-container .sort-by-container .sort-by-bar {
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  width: 100%;
+  height: 34px;
+  padding: 0 39px 0 14px;
+}
+.search-bar-container .view-control-bar-container {
+  display: flex;
+  margin-left: 30px;
 }/*# sourceMappingURL=SearchBar.styles.css.map */

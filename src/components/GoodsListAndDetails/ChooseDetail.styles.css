@@ -7,10 +7,22 @@
 .choose-detail-container .details-choosing-and-clear-container .details-choosing-title {
   margin-bottom: 15px;
 }
-.choose-detail-container .details-choosing-and-clear-container .details-clear-button {
+.choose-detail-container .details-choosing-and-clear-container .details-clear-button-container {
   margin-top: 20px;
 }
-.choose-detail-container .details-container {
-  margin-top: 2;
-  padding: 20px 30px;
+.choose-detail-container .details-choosing-and-clear-container .details-clear-button-container .details-clear-button {
+  width: 100%;
+  min-height: 48px;
+  color: #fff;
+  border-color: #ccc;
+  background-color: #ccc;
+  font-weight: normal;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  vertical-align: middle;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }/*# sourceMappingURL=ChooseDetail.styles.css.map */

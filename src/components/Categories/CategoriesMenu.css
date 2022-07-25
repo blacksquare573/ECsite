@@ -31,6 +31,7 @@
 .navigation-bar-container .navigation-bar .categories-container .categories-background {
   display: none;
   position: relative;
+  z-index: 100;
   width: 1240px;
   height: 300px;
   border: 1px solid #dbdbdb;

@@ -1,5 +1,6 @@
 import SecondLevelCategories from "./SecondLevelCategories.component";
 import "./FirstLevelCategories.css";
+import { Link } from "react-router-dom";
 
 const FirstLevelCategories = ({ first }) => {
   const { categoryName, subList, categoryImg } = first;
@@ -11,7 +12,9 @@ const FirstLevelCategories = ({ first }) => {
         {/*position: absolute*/}
         <div className="second-title">
           <img className="category-img" src={categoryImg} alt="imgs" />
-          <span className="second-title-text">{categoryName}</span>
+          <Link className="second-title-text" to="/itemList">
+            {categoryName}
+          </Link>
         </div>
         <ul className="second-list">
           {subList.map((second) => (

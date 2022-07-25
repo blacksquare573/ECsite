@@ -1,9 +1,15 @@
 import "./SearchBar.styles.css";
-const SearchBar = () => {
+
+const SearchBar = ({ numsOfItems }) => {
   return (
     <div className="search-bar-container">
-      <p>全+件数+件 1~絞り込んだ件数+件</p>
-      <select>表示順</select>
+      <p className="number-of-goods">全{numsOfItems}件 1~10件</p>
+      <div className="sort-by-container">
+        <select className="sort-by-bar">
+          <option value="selling_price">価格の安い順</option>
+          <option value="create_time">新着順</option>
+        </select>
+      </div>
       <dl className="view-control-bar-container">
         <dt>表示切替</dt>
         <dd>icon1</dd>

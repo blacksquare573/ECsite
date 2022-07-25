@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Swiper.styles.css";
-const Swiper = () => {
+
+const Swiper = ({ categoryName }) => {
   return (
     <div className="swiper-bar-container">
       <ol className="swiper-bar">
@@ -9,17 +10,17 @@ const Swiper = () => {
         </li>
         {/* categories.map */}
         <li className="swiper-item">
-          {/* <Link className="go-back-home" to="/"> */} ⇒ Lv1-categoryName
+          {/* <Link className="go-back-home" to="/"> */} ⇒ {categoryName}
           {/* </Link> */}
+        </li>
+        {/* <li className="swiper-item">
+           <Link className="go-back-home" to="/">  ⇒ Lv2-categoryName
+           </Link> 
         </li>
         <li className="swiper-item">
-          {/* <Link className="go-back-home" to="/"> */} ⇒ Lv2-categoryName
-          {/* </Link> */}
-        </li>
-        <li className="swiper-item">
-          {/* <Link className="go-back-home" to="/"> */} ⇒ Lv3-categoryName
-          {/* </Link> */}
-        </li>
+           <Link className="go-back-home" to="/">  ⇒ Lv3-categoryName
+           </Link> 
+        </li> */}
       </ol>
     </div>
   );

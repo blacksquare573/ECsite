@@ -1,10 +1,11 @@
-const CategoryTitle = () => {
+import "./CategoryTitle.styles.css";
+const CategoryTitle = ({ categoryName }) => {
   return (
     <div className="category-main-title-container">
-      <h1 className="category-main-title">category name</h1>
+      <h1 className="category-main-title">{categoryName}</h1>
       <p className="category-introduction">introduce-text</p>
       {/* <Link className="category-suggestion" to="/categorySuggestion"> */}
-      category name +の選び方
+      {/* <p>{categoryName}の選び方</p> */}
       {/* </Link> */}
     </div>
   );
