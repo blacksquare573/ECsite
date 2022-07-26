@@ -12,7 +12,11 @@ const FirstLevelCategories = ({ first }) => {
         {/*position: absolute*/}
         <div className="second-title">
           <img className="category-img" src={categoryImg} alt="imgs" />
-          <Link className="second-title-text" to="/itemList">
+          <Link
+            className="second-title-text"
+            to="/itemList"
+            state={categoryName}
+          >
             {categoryName}
           </Link>
         </div>

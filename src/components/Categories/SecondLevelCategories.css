@@ -1,4 +1,7 @@
 .second-level-categories {
   width: 30%;
   padding: 13px 14px 0 0;
+}
+.second-level-categories .second-level-category-name {
+  color: black;
 }/*# sourceMappingURL=SecondLevelCategories.css.map */

@@ -20,7 +20,7 @@ const SubDetail = ({ name, value }) => {
       detailFilterList.push(name);
     }
     setDetailFilterList(detailFilterList);
-    console.log(detailFilterList);
+    // console.log(detailFilterList);
     // console.log(getGoodsList);
     getGoodsList();
   };

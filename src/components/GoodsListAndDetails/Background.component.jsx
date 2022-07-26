@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Background.styles.css";
 import Swiper from "./Swiper.component";
@@ -15,25 +15,33 @@ export const setDetailFilterListContext = createContext();
 export const getGoodsListContext = createContext();
 
 const Background = () => {
-  const [categoryName, setCategoryName] = useState("");
+  const linkCategoryName = useLocation().state;
+  console.log(linkCategoryName);
+
+  const [categoryNameState, setCategoryNameState] = useState("");
   const [goodsList, setGoodsList] = useState([]);
   const [numsOfItems, setNumsOfItems] = useState(0);
   const [subCategoryNameAndNumsOfItems, setSubCategoryNameAndNumsOfItems] =
     useState([]);
   const [goodsDetailsList, setGoodsDetailsList] = useState([]);
   const [detailFilterList, setDetailFilterList] = useState([]);
-
+  useEffect(() => {
+    setCategoryNameState(linkCategoryName);
+  }, [linkCategoryName]);
+  console.log(categoryNameState);
   const getGoodsList = () => {
+    // setCategoryNameState(linkCategoryName);
+    // console.log(categoryNameState);
     axios
       .post("http://localhost:8080/itemList", {
-        categoryName: "家电",
+        categoryName: categoryNameState,
         page: 1,
         orderBy: "selling_price",
         ascOrDesc: "asc",
         cols: detailFilterList,
       })
       .then((response) => {
-        setCategoryName(response.data.data.categoryName);
+        // setCategoryName(response.data.data.categoryName);
         setGoodsList(response.data.data.itemListsVOs);
         setNumsOfItems(response.data.data.numsOfItems);
         setSubCategoryNameAndNumsOfItems(
@@ -49,7 +57,7 @@ const Background = () => {
     <Fragment>
       <div className="goods-list-body-area">
         <div className="swiper-container">
-          <Swiper categoryName={categoryName} />
+          <Swiper categoryName={categoryNameState} />
         </div>
         <div className="goods-list-background">
           <div className="background-left">
@@ -69,7 +77,7 @@ const Background = () => {
             </div>
           </div>
           <div className="background-right">
-            <CategoryTitle categoryName={categoryName} />
+            <CategoryTitle categoryName={categoryNameState} />
             <div className="goods-list-container">
               <SearchBar numsOfItems={numsOfItems} />
               <div className="goods-cards-container">
