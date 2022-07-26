@@ -1,11 +1,7 @@
 import "./GoodsDetails.styles.css";
 import SubDetail from "./SubDetail.component";
 
-const GoodsDetails = ({
-  goodsDetails,
-  detailFilterList,
-  setDetailFilterList,
-}) => {
+const GoodsDetails = ({ goodsDetails }) => {
   const { name, subDetailsList } = goodsDetails;
   // console.log(
   //   Object.entries(subDetailsList).map(
@@ -18,13 +14,7 @@ const GoodsDetails = ({
       <div className="sub-details-container">
         <ul className="sub-details">
           {Object.entries(subDetailsList).map(([key, value], index) => (
-            <SubDetail
-              key={index}
-              name={key}
-              value={value}
-              detailFilterList={detailFilterList}
-              setDetailFilterList={setDetailFilterList}
-            />
+            <SubDetail key={index} name={key} value={value} />
           ))}
         </ul>
       </div>

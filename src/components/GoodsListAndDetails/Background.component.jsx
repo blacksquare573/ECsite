@@ -8,6 +8,11 @@ import ChooseDetail from "./ChooseDetail.component";
 import SearchBar from "./SearchBar.component";
 import GoodsList from "./GoodsList.component";
 import CategoryTitle from "./CategoryTitle.component";
+import { createContext } from "react";
+
+export const detailFilterListContext = createContext();
+export const setDetailFilterListContext = createContext();
+export const getGoodsListContext = createContext();
 
 const Background = () => {
   const [categoryName, setCategoryName] = useState("");
@@ -18,13 +23,14 @@ const Background = () => {
   const [goodsDetailsList, setGoodsDetailsList] = useState([]);
   const [detailFilterList, setDetailFilterList] = useState([]);
 
-  useEffect(() => {
+  const getGoodsList = () => {
     axios
       .post("http://localhost:8080/itemList", {
         categoryName: "家电",
         page: 1,
         orderBy: "selling_price",
         ascOrDesc: "asc",
+        cols: detailFilterList,
       })
       .then((response) => {
         setCategoryName(response.data.data.categoryName);
@@ -35,7 +41,9 @@ const Background = () => {
         );
         setGoodsDetailsList(response.data.data.subCategoryWithGoodsDetailsVos);
       });
-  }, []);
+  };
+
+  useEffect(getGoodsList, []);
 
   return (
     <Fragment>
@@ -49,11 +57,15 @@ const Background = () => {
               <ChooseCategory
                 subCategoryNameAndNumsOfItems={subCategoryNameAndNumsOfItems}
               />
-              <ChooseDetail
-                goodsDetailsList={goodsDetailsList}
-                detailFilterList={detailFilterList}
-                setDetailFilterList={setDetailFilterList}
-              />
+              <detailFilterListContext.Provider value={detailFilterList}>
+                <setDetailFilterListContext.Provider
+                  value={setDetailFilterList}
+                >
+                  <getGoodsListContext.Provider value={getGoodsList}>
+                    <ChooseDetail goodsDetailsList={goodsDetailsList} />
+                  </getGoodsListContext.Provider>
+                </setDetailFilterListContext.Provider>
+              </detailFilterListContext.Provider>
             </div>
           </div>
           <div className="background-right">

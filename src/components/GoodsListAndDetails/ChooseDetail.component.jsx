@@ -1,11 +1,7 @@
 import "./ChooseDetail.styles.css";
 import GoodsDetails from "./GoodsDetails.component";
 
-const ChooseDetail = ({
-  goodsDetailsList,
-  detailFilterList,
-  setDetailFilterList,
-}) => {
+const ChooseDetail = ({ goodsDetailsList }) => {
   return (
     <div className="choose-detail-container">
       <h2 className="choose-detail-title">条件で絞り込む</h2>
@@ -20,12 +16,7 @@ const ChooseDetail = ({
       </div>
       <div className="details-containers-area">
         {goodsDetailsList.map((goodsDetails, index) => (
-          <GoodsDetails
-            key={index}
-            goodsDetails={goodsDetails}
-            detailFilterList={detailFilterList}
-            setDetailFilterList={setDetailFilterList}
-          />
+          <GoodsDetails key={index} goodsDetails={goodsDetails} />
         ))}
       </div>
     </div>
