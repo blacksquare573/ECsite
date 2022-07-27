@@ -27,4 +27,7 @@
 }
 .goods-list-body-area .goods-list-background .background-right .goods-list-container {
   white-space: normal;
+}
+.goods-list-body-area .goods-list-background .background-right .page-change-container {
+  display: flex;
 }/*# sourceMappingURL=Background.styles.css.map */

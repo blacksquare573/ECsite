@@ -7,7 +7,7 @@ const SubCategory = ({ nameAndNums, firstLevelName }) => {
     <li className="subcategory-button">
       <Link
         className="subcategory-link"
-        to="/itemList"
+        to={`/itemList/${categoryName}`}
         state={{ categoryName, firstLevelName }}
       >
         <span className="subcategory-name-and-nums">

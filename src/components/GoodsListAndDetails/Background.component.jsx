@@ -20,9 +20,9 @@ const Background = () => {
   // const firstCategoryName = useLocation().state.firstLevelName;
   const categoryLocation = useLocation().state;
   const { categoryName, firstLevelName } = categoryLocation;
-  console.log(categoryName);
+  // console.log(categoryLocation);
 
-  const [page, setPage] = useState(1);
+  const [pageNow, setPageNow] = useState(1);
   const [orderBy, setOrderBy] = useState("selling_price");
   const [goodsList, setGoodsList] = useState([]);
   const [numsOfItems, setNumsOfItems] = useState(0);
@@ -31,13 +31,15 @@ const Background = () => {
   const [goodsDetailsList, setGoodsDetailsList] = useState([]);
   const [detailFilterList, setDetailFilterList] = useState([]);
 
+  console.log(pageNow);
+
   const getGoodsList = () => {
     // setStateCategoryName(linkCategoryName);
     // console.log(stateCategoryName);
     axios
       .post("http://localhost:8080/itemList", {
         categoryName: categoryName,
-        page: page,
+        page: pageNow,
         orderBy: orderBy,
         ascOrDesc: "asc",
         cols: detailFilterList,
@@ -52,7 +54,7 @@ const Background = () => {
       });
   };
 
-  useEffect(getGoodsList, [categoryName, page, orderBy, detailFilterList]);
+  useEffect(getGoodsList, [categoryName, pageNow, orderBy, detailFilterList]);
 
   return (
     <Fragment>
@@ -82,6 +84,7 @@ const Background = () => {
             <CategoryTitle categoryName={categoryName} />
             <div className="goods-list-container">
               <SearchBar
+                pageNow={pageNow}
                 numsOfItems={numsOfItems}
                 orderBy={orderBy}
                 setOrderBy={setOrderBy}
@@ -90,7 +93,13 @@ const Background = () => {
                 <GoodsList goodsList={goodsList} />
               </div>
               <div className="page-change-container">
-                <PageChangeBar />
+                <PageChangeBar
+                  pageNow={pageNow}
+                  setPageNow={setPageNow}
+                  numsOfItems={numsOfItems}
+                  categoryName={categoryName}
+                  firstLevelName={firstLevelName}
+                />
               </div>
             </div>
           </div>

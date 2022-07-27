@@ -1,9 +1,28 @@
 .page-change-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  .page-num-container {
+    color: #009e96;
+    font-weight: normal;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    vertical-align: middle;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background-color: #fff;
+    min-width: 32px;
+    min-height: 32px;
+  }
   .next-page-button {
     padding-left: 30px;
   }
+}
+.page-change-bar li {
+  margin: 2px 2.5px;
 }

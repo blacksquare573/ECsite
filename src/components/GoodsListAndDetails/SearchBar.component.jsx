@@ -1,6 +1,6 @@
 import "./SearchBar.styles.css";
 
-const SearchBar = ({ numsOfItems, orderBy, setOrderBy }) => {
+const SearchBar = ({ pageNow, numsOfItems, orderBy, setOrderBy }) => {
   const sortBy = (event) => {
     console.log(event.target.value);
     setOrderBy(event.target.value);
@@ -9,7 +9,7 @@ const SearchBar = ({ numsOfItems, orderBy, setOrderBy }) => {
   return (
     <div className="search-bar-container">
       <p className="number-of-goods">
-        全{numsOfItems}件 1~{numsOfItems}件
+        全{numsOfItems}件 {(pageNow - 1) * 10 + 1}~{numsOfItems}件
       </p>
       <div className="sort-by-container">
         <select value={orderBy} onChange={sortBy} className="sort-by-bar">

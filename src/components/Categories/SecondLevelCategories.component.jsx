@@ -8,7 +8,7 @@ const SecondLevelCategories = ({ second, firstLevelName }) => {
     <li className="second-level-categories">
       <Link
         className="second-level-category-name"
-        to="/itemList"
+        to={`/itemList/${categoryName}`}
         state={{ categoryName: categoryName, firstLevelName: firstLevelName }}
       >
         {categoryName}
