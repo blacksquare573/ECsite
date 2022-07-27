@@ -1,0 +1,9 @@
+.page-change-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.page-change-bar .next-page-button {
+  padding-left: 30px;
+}/*# sourceMappingURL=PageChangeBar.styles.css.map */

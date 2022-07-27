@@ -1,11 +1,18 @@
 import "./SearchBar.styles.css";
 
-const SearchBar = ({ numsOfItems }) => {
+const SearchBar = ({ numsOfItems, orderBy, setOrderBy }) => {
+  const sortBy = (event) => {
+    console.log(event.target.value);
+    setOrderBy(event.target.value);
+  };
+
   return (
     <div className="search-bar-container">
-      <p className="number-of-goods">全{numsOfItems}件 1~10件</p>
+      <p className="number-of-goods">
+        全{numsOfItems}件 1~{numsOfItems}件
+      </p>
       <div className="sort-by-container">
-        <select className="sort-by-bar">
+        <select value={orderBy} onChange={sortBy} className="sort-by-bar">
           <option value="selling_price">価格の安い順</option>
           <option value="create_time">新着順</option>
         </select>

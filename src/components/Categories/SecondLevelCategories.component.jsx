@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./SecondLevelCategories.css";
 
-const SecondLevelCategories = ({ second }) => {
+const SecondLevelCategories = ({ second, firstLevelName }) => {
   const { categoryName } = second;
 
   return (
@@ -9,7 +9,7 @@ const SecondLevelCategories = ({ second }) => {
       <Link
         className="second-level-category-name"
         to="/itemList"
-        state={categoryName}
+        state={{ categoryName: categoryName, firstLevelName: firstLevelName }}
       >
         {categoryName}
       </Link>

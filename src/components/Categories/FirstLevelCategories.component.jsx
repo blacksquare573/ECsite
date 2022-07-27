@@ -22,7 +22,11 @@ const FirstLevelCategories = ({ first }) => {
         </div>
         <ul className="second-list">
           {subList.map((second) => (
-            <SecondLevelCategories key={second.categoryId} second={second} />
+            <SecondLevelCategories
+              key={second.categoryId}
+              second={second}
+              firstLevelName={categoryName}
+            />
           ))}
         </ul>
       </div>

@@ -9,39 +9,40 @@ import SearchBar from "./SearchBar.component";
 import GoodsList from "./GoodsList.component";
 import CategoryTitle from "./CategoryTitle.component";
 import { createContext } from "react";
+import PageChangeBar from "./PageChangeBar.component";
 
 export const detailFilterListContext = createContext();
 export const setDetailFilterListContext = createContext();
 export const getGoodsListContext = createContext();
 
 const Background = () => {
-  const linkCategoryName = useLocation().state;
-  console.log(linkCategoryName);
+  // const linkCategoryName = useLocation().state.categoryName;
+  // const firstCategoryName = useLocation().state.firstLevelName;
+  const categoryLocation = useLocation().state;
+  const { categoryName, firstLevelName } = categoryLocation;
+  console.log(categoryName);
 
-  const [categoryNameState, setCategoryNameState] = useState("");
+  const [page, setPage] = useState(1);
+  const [orderBy, setOrderBy] = useState("selling_price");
   const [goodsList, setGoodsList] = useState([]);
   const [numsOfItems, setNumsOfItems] = useState(0);
   const [subCategoryNameAndNumsOfItems, setSubCategoryNameAndNumsOfItems] =
     useState([]);
   const [goodsDetailsList, setGoodsDetailsList] = useState([]);
   const [detailFilterList, setDetailFilterList] = useState([]);
-  useEffect(() => {
-    setCategoryNameState(linkCategoryName);
-  }, [linkCategoryName]);
-  console.log(categoryNameState);
+
   const getGoodsList = () => {
-    // setCategoryNameState(linkCategoryName);
-    // console.log(categoryNameState);
+    // setStateCategoryName(linkCategoryName);
+    // console.log(stateCategoryName);
     axios
       .post("http://localhost:8080/itemList", {
-        categoryName: categoryNameState,
-        page: 1,
-        orderBy: "selling_price",
+        categoryName: categoryName,
+        page: page,
+        orderBy: orderBy,
         ascOrDesc: "asc",
         cols: detailFilterList,
       })
       .then((response) => {
-        // setCategoryName(response.data.data.categoryName);
         setGoodsList(response.data.data.itemListsVOs);
         setNumsOfItems(response.data.data.numsOfItems);
         setSubCategoryNameAndNumsOfItems(
@@ -51,19 +52,20 @@ const Background = () => {
       });
   };
 
-  useEffect(getGoodsList, []);
+  useEffect(getGoodsList, [categoryName, page, orderBy, detailFilterList]);
 
   return (
     <Fragment>
       <div className="goods-list-body-area">
         <div className="swiper-container">
-          <Swiper categoryName={categoryNameState} />
+          <Swiper categoryName={categoryName} firstLevelName={firstLevelName} />
         </div>
         <div className="goods-list-background">
           <div className="background-left">
             <div className="details-bar-container">
               <ChooseCategory
                 subCategoryNameAndNumsOfItems={subCategoryNameAndNumsOfItems}
+                firstLevelName={firstLevelName}
               />
               <detailFilterListContext.Provider value={detailFilterList}>
                 <setDetailFilterListContext.Provider
@@ -77,11 +79,18 @@ const Background = () => {
             </div>
           </div>
           <div className="background-right">
-            <CategoryTitle categoryName={categoryNameState} />
+            <CategoryTitle categoryName={categoryName} />
             <div className="goods-list-container">
-              <SearchBar numsOfItems={numsOfItems} />
+              <SearchBar
+                numsOfItems={numsOfItems}
+                orderBy={orderBy}
+                setOrderBy={setOrderBy}
+              />
               <div className="goods-cards-container">
                 <GoodsList goodsList={goodsList} />
+              </div>
+              <div className="page-change-container">
+                <PageChangeBar />
               </div>
             </div>
           </div>
