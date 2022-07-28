@@ -9,12 +9,17 @@ const HomePage = () => {
       <Routes>
         <Route path="/" element={<CategoriesMenu />}>
           <Route index element={<Home />} />
-          <Route path="itemList" element={<Background />} />
-          <Route path="itemList/:categoryName" element={<Background />} />
+          {/* <Route path="itemList" element={<Background />} /> */}
+          {/* <Route path="itemList/:categoryName" element={<Background />} /> */}
           <Route
-            path="itemList/:categoryName/:pageNow"
+            path="itemList/:firstCategoryName/:categoryName/:pageNow"
             element={<Background />}
           />
+          <Route
+            path="itemList/:firstCategoryName/:secondCategoryName/:categoryName/:pageNow"
+            element={<Background />}
+          />
+          {/* <Route path="itemList/:categoryName/:pageNow" element={<Background />} /> */}
         </Route>
       </Routes>
     </Fragment>

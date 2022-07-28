@@ -3,10 +3,10 @@ import "./PageChangeBar.styles.css";
 
 const PageChangeBar = ({
   pageNow,
-  setPageNow,
   numsOfItems,
   categoryName,
-  firstLevelName,
+  firstCategoryName,
+  secondCategoryName,
 }) => {
   //   console.log(pageNow, numsOfItems);
   const pageTotal = Math.ceil(numsOfItems / 10);
@@ -16,27 +16,68 @@ const PageChangeBar = ({
     pageButtonList.push(i);
   }
 
-  const pageChange = (pageNum) => {
-    setPageNow(pageNum);
-  };
+  // const pageChange = (pageNum) => {
+  //   setPageNow(pageNum);
+  // };
 
   //   console.log(pageButtonList);
   return (
     <ul className="page-change-bar">
+      {pageNow !== 1 && (
+        <li className="previous-page-button">
+          <Link
+            to={
+              secondCategoryName
+                ? `/itemList/${firstCategoryName}/${secondCategoryName}/${categoryName}/${
+                    pageNow - 1
+                  }`
+                : `/itemList/${firstCategoryName}/${categoryName}/${
+                    pageNow - 1
+                  }`
+            }
+          >
+            ⇐前へ
+          </Link>
+        </li>
+      )}
       {pageButtonList.map((pageNum) => {
         return (
-          <li>
-            <Link
-              to={`/itemList/${categoryName}/${pageNum}`}
-              state={{ categoryName, firstLevelName }}
-              onClick={(event) => pageChange(pageNum)}
-            >
-              <span className="page-num-container">{pageNum}</span>
-            </Link>
+          <li key={pageNum}>
+            {pageNow === pageNum ? (
+              <span className="page-num-container-now">{pageNum}</span>
+            ) : (
+              <Link
+                to={
+                  secondCategoryName
+                    ? `/itemList/${firstCategoryName}/${secondCategoryName}/${categoryName}/${pageNum}`
+                    : `/itemList/${firstCategoryName}/${categoryName}/${pageNum}`
+                }
+                // state={{ categoryName, firstLevelName, pageNow: pageNum, }}
+                // onClick={(event) => pageChange(pageNum)}
+              >
+                <span className="page-num-container">{pageNum}</span>
+              </Link>
+            )}
           </li>
         );
       })}
-      <li className="next-page-button">次へ⇒</li>
+      {pageNow !== pageButtonList[pageButtonList.length - 1] && (
+        <li className="next-page-button">
+          <Link
+            to={
+              secondCategoryName
+                ? `/itemList/${firstCategoryName}/${secondCategoryName}/${categoryName}/${
+                    pageNow + 1
+                  }`
+                : `/itemList/${firstCategoryName}/${categoryName}/${
+                    pageNow + 1
+                  }`
+            }
+          >
+            次へ⇒
+          </Link>
+        </li>
+      )}
     </ul>
   );
 };

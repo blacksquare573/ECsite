@@ -3,26 +3,26 @@ import "./SubDetail.styles.css";
 import {
   detailFilterListContext,
   setDetailFilterListContext,
-  getGoodsListContext,
+  // getGoodsListContext,
 } from "../GoodsListAndDetails/Background.component";
 
 const SubDetail = ({ name, value }) => {
   const detailFilterList = useContext(detailFilterListContext);
   const setDetailFilterList = useContext(setDetailFilterListContext);
-  const getGoodsList = useContext(getGoodsListContext);
+  // const getGoodsList = useContext(getGoodsListContext);
 
   const changeFilterListHandler = () => {
-    // let result = detailFilterList.slice();
-    if (detailFilterList.includes(name)) {
-      let index = detailFilterList.indexOf(name);
-      detailFilterList.splice(index, 1);
+    let result = detailFilterList.slice();
+    if (result.includes(name)) {
+      let index = result.indexOf(name);
+      result.splice(index, 1);
     } else {
-      detailFilterList.push(name);
+      result.push(name);
     }
-    setDetailFilterList(detailFilterList);
+    setDetailFilterList(result);
     // console.log(detailFilterList);
     // console.log(getGoodsList);
-    getGoodsList();
+    // getGoodsList();
   };
 
   return (

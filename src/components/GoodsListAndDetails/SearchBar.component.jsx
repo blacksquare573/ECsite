@@ -9,7 +9,8 @@ const SearchBar = ({ pageNow, numsOfItems, orderBy, setOrderBy }) => {
   return (
     <div className="search-bar-container">
       <p className="number-of-goods">
-        全{numsOfItems}件 {(pageNow - 1) * 10 + 1}~{numsOfItems}件
+        全{numsOfItems}件 {(pageNow - 1) * 10 + 1}~
+        {pageNow * 10 >= numsOfItems ? numsOfItems : pageNow * 10}件
       </p>
       <div className="sort-by-container">
         <select value={orderBy} onChange={sortBy} className="sort-by-bar">

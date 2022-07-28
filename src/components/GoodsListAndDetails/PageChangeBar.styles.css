@@ -5,6 +5,24 @@
   align-items: center;
   margin-top: 50px;
 }
+.page-change-bar .previous-page-button {
+  padding-right: 30px;
+}
+.page-change-bar .page-num-container-now {
+  color: #009e96;
+  background-color: #dcfff6;
+  font-weight: normal;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  vertical-align: middle;
+  border: 1px solid #009e96;
+  border-radius: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
 .page-change-bar .page-num-container {
   color: #009e96;
   font-weight: normal;
@@ -19,6 +37,9 @@
   background-color: #fff;
   min-width: 32px;
   min-height: 32px;
+}
+.page-change-bar .page-num-container:hover {
+  border: 1px solid #009e96;
 }
 .page-change-bar .next-page-button {
   padding-left: 30px;

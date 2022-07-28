@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import "./SubCategory.styles.css";
 
-const SubCategory = ({ nameAndNums, firstLevelName }) => {
+const SubCategory = ({
+  nameAndNums,
+  firstCategoryName,
+  secondCategoryName,
+}) => {
   const { categoryName, subNumsOfGoods } = nameAndNums;
   return (
     <li className="subcategory-button">
       <Link
         className="subcategory-link"
-        to={`/itemList/${categoryName}`}
-        state={{ categoryName, firstLevelName }}
+        to={`/itemList/${firstCategoryName}/${secondCategoryName}/${categoryName}/1`}
       >
         <span className="subcategory-name-and-nums">
           {categoryName}（{subNumsOfGoods}）

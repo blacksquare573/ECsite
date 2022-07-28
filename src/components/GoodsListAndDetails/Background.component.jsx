@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Background.styles.css";
 import Swiper from "./Swiper.component";
@@ -16,13 +16,14 @@ export const setDetailFilterListContext = createContext();
 export const getGoodsListContext = createContext();
 
 const Background = () => {
-  // const linkCategoryName = useLocation().state.categoryName;
-  // const firstCategoryName = useLocation().state.firstLevelName;
-  const categoryLocation = useLocation().state;
-  const { categoryName, firstLevelName } = categoryLocation;
-  // console.log(categoryLocation);
+  const param = useParams();
+  const firstCategoryName = param.firstCategoryName;
+  const secondCategoryName = param.secondCategoryName;
+  const categoryName = param.categoryName;
+  const pageNow = param.pageNow ? parseInt(param.pageNow) : 1;
+  // console.log(firstCategoryName, secondCategoryName, categoryName, pageNow);
 
-  const [pageNow, setPageNow] = useState(1);
+  // const [pageNow, setPageNow] = useState(1);
   const [orderBy, setOrderBy] = useState("selling_price");
   const [goodsList, setGoodsList] = useState([]);
   const [numsOfItems, setNumsOfItems] = useState(0);
@@ -31,7 +32,7 @@ const Background = () => {
   const [goodsDetailsList, setGoodsDetailsList] = useState([]);
   const [detailFilterList, setDetailFilterList] = useState([]);
 
-  console.log(pageNow);
+  // console.log(pageNow);
 
   const getGoodsList = () => {
     // setStateCategoryName(linkCategoryName);
@@ -60,21 +61,30 @@ const Background = () => {
     <Fragment>
       <div className="goods-list-body-area">
         <div className="swiper-container">
-          <Swiper categoryName={categoryName} firstLevelName={firstLevelName} />
+          <Swiper
+            categoryName={categoryName}
+            firstCategoryName={firstCategoryName}
+            secondCategoryName={secondCategoryName}
+          />
         </div>
         <div className="goods-list-background">
           <div className="background-left">
             <div className="details-bar-container">
               <ChooseCategory
                 subCategoryNameAndNumsOfItems={subCategoryNameAndNumsOfItems}
-                firstLevelName={firstLevelName}
+                firstCategoryName={firstCategoryName}
+                categoryName={categoryName}
               />
               <detailFilterListContext.Provider value={detailFilterList}>
                 <setDetailFilterListContext.Provider
                   value={setDetailFilterList}
                 >
                   <getGoodsListContext.Provider value={getGoodsList}>
-                    <ChooseDetail goodsDetailsList={goodsDetailsList} />
+                    <ChooseDetail
+                      goodsDetailsList={goodsDetailsList}
+                      detailFilterList={detailFilterList}
+                      setDetailFilterList={setDetailFilterList}
+                    />
                   </getGoodsListContext.Provider>
                 </setDetailFilterListContext.Provider>
               </detailFilterListContext.Provider>
@@ -95,10 +105,10 @@ const Background = () => {
               <div className="page-change-container">
                 <PageChangeBar
                   pageNow={pageNow}
-                  setPageNow={setPageNow}
                   numsOfItems={numsOfItems}
                   categoryName={categoryName}
-                  firstLevelName={firstLevelName}
+                  firstCategoryName={firstCategoryName}
+                  secondCategoryName={secondCategoryName}
                 />
               </div>
             </div>

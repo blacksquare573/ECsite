@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import "./ChooseCategory.styles.css";
 import SubCategory from "./SubCategory.component";
 
-const ChooseCategory = ({ subCategoryNameAndNumsOfItems, firstLevelName }) => {
+const ChooseCategory = ({
+  subCategoryNameAndNumsOfItems,
+  firstCategoryName,
+  categoryName,
+}) => {
   return (
     <div className="choose-category-container">
       <h2 className="choose-category-title">カテゴリを選択</h2>
@@ -13,7 +17,8 @@ const ChooseCategory = ({ subCategoryNameAndNumsOfItems, firstLevelName }) => {
             <SubCategory
               key={index}
               nameAndNums={nameAndNums}
-              firstLevelName={firstLevelName}
+              firstCategoryName={firstCategoryName}
+              secondCategoryName={categoryName}
             />
           ))}
         </ul>

@@ -8,8 +8,8 @@ const SecondLevelCategories = ({ second, firstLevelName }) => {
     <li className="second-level-categories">
       <Link
         className="second-level-category-name"
-        to={`/itemList/${categoryName}`}
-        state={{ categoryName: categoryName, firstLevelName: firstLevelName }}
+        to={`/itemList/${firstLevelName}/${categoryName}/1`}
+        // state={{ categoryName, firstLevelName, pageNow: 1 }}
       >
         {categoryName}
       </Link>
