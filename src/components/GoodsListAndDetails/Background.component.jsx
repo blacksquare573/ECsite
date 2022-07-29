@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, createContext } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Background.styles.css";
@@ -8,7 +8,6 @@ import ChooseDetail from "./ChooseDetail.component";
 import SearchBar from "./SearchBar.component";
 import GoodsList from "./GoodsList.component";
 import CategoryTitle from "./CategoryTitle.component";
-import { createContext } from "react";
 import PageChangeBar from "./PageChangeBar.component";
 
 export const detailFilterListContext = createContext();
