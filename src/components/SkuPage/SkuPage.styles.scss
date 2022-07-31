@@ -1,0 +1,40 @@
+.sku-body-area {
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+  .swiper-container {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .sku-title-container {
+    margin-bottom: 35px;
+  }
+  .sku-body-container {
+    white-space: nowrap;
+    .sku-body-left {
+      display: inline-block;
+      width: calc(100% - 330px);
+      .sku-body-left-flexbox {
+        display: flex;
+        white-space: wrap;
+        flex-wrap: wrap;
+        .sku-introduction-and-QA-container {
+          width: 100%;
+        }
+      }
+    }
+    .sku-body-right {
+      display: inline-block;
+      vertical-align: top;
+      background-color: aquamarine;
+      width: 290px;
+      margin-left: 40px;
+    }
+  }
+  .put-into-the-cart-container {
+    position: sticky;
+    top: 40px;
+  }
+}

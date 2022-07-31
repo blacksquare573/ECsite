@@ -9,7 +9,7 @@ const GoodsCard = ({ item }) => {
     detailsImgUrlList,
   } = item;
 
-  console.log(colorImgUrlList, detailsImgUrlList);
+  // console.log(colorImgUrlList, detailsImgUrlList);
   return (
     <li>
       <div className="goods-card-container">
@@ -20,9 +20,9 @@ const GoodsCard = ({ item }) => {
           <p className="goods-comment">{goodsDetailContent}</p>
           <div className="goods-colors-container">
             <ul className="goods-colors-list">
-              {colorImgUrlList.map((color) => {
+              {colorImgUrlList.map((color, index) => {
                 return (
-                  <li className="colors-img-container">
+                  <li className="colors-img-container" key={index}>
                     <img
                       className="colors-img"
                       src={color}
@@ -36,9 +36,9 @@ const GoodsCard = ({ item }) => {
             </ul>
           </div>
           <ul className="goods-details-container">
-            {detailsImgUrlList.map((detail) => {
+            {detailsImgUrlList.map((detail, index) => {
               return (
-                <li className="details-img-container">
+                <li className="details-img-container" key={index}>
                   <img src={detail} alt="imgs" width="41px" height="41px" />
                 </li>
               );
