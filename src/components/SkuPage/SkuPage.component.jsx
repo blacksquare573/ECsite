@@ -1,12 +1,36 @@
 import { Fragment } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import "./SkuPage.styles.css";
 import Skutitle from "./SkuTitle.component";
 import SkuPictures from "./SkuBody/SkuPictures.component";
 import SkuSizeAndColor from "./SkuBody/SkuSizeAndColor.component";
+import { useState } from "react";
 
 const SkuPage = () => {
+  const param = useParams();
+  const goodsId = param.goodsId;
+
+  const [skuId, setSkuId] = useState(0);
+  const [goodsName, setGoodsName] = useState("");
+  const [skuName, setSkuName] = useState("");
+  const [size, setSize] = useState("");
+  const [sizeDetail, setSizeDetail] = useState("");
+  const [color, setColor] = useState("");
+  const [catchcopy, setCatchcopy] = useState("");
+  const [price, setPrice] = useState(0);
+  const [point, setPoint] = useState(0);
+  const [material, setMaterial] = useState("");
+  const [weight, setWeight] = useState("");
+  const [warranty, setWarranty] = useState("");
+  const [deliveryMethod, setDeliveryMethod] = useState("");
+  const [stock, setStock] = useState(0);
+  const [deliveryTime, setDeliveryTime] = useState("");
+  const [deliveryImg, setDeliveryImg] = useState("");
+  const [sizeList, setSizeList] = useState([]);
+  const [colorList, setColorList] = useState([]);
+  const [imgList, setImgList] = useState({});
+
   return (
     <Fragment>
       <div className="sku-body-area">
