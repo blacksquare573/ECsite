@@ -12,17 +12,23 @@
 .sku-body-area .sku-title-container {
   margin-bottom: 35px;
 }
-.sku-body-area .sku-body-container {
-  white-space: nowrap;
-}
 .sku-body-area .sku-body-container .sku-body-left {
   display: inline-block;
   width: calc(100% - 330px);
 }
 .sku-body-area .sku-body-container .sku-body-left .sku-body-left-flexbox {
   display: flex;
-  white-space: wrap;
   flex-wrap: wrap;
+}
+.sku-body-area .sku-body-container .sku-body-left .sku-body-left-flexbox .pictures-container {
+  width: calc((100% - 40px) / 2 - 0.1px);
+  min-width: 300px;
+  padding: 20px;
+}
+.sku-body-area .sku-body-container .sku-body-left .sku-body-left-flexbox .choose-size-and-color-container {
+  width: calc((100% - 40px) / 2 - 0.1px);
+  min-width: 300px;
+  padding: 20px;
 }
 .sku-body-area .sku-body-container .sku-body-left .sku-body-left-flexbox .sku-introduction-and-QA-container {
   width: 100%;

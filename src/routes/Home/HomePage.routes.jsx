@@ -18,7 +18,7 @@ const HomePage = () => {
             path="itemList/:firstCategoryName/:secondCategoryName/:categoryName/:pageNow"
             element={<Background />}
           />
-          <Route path="sku/:skuId" element={<SkuPage />}></Route>
+          <Route path="sku/:goodsId" element={<SkuPage />}></Route>
         </Route>
       </Routes>
     </Fragment>

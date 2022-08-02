@@ -12,14 +12,23 @@
     margin-bottom: 35px;
   }
   .sku-body-container {
-    white-space: nowrap;
+    // white-space: nowrap;
     .sku-body-left {
       display: inline-block;
       width: calc(100% - 330px);
       .sku-body-left-flexbox {
         display: flex;
-        white-space: wrap;
         flex-wrap: wrap;
+        .pictures-container {
+          width: calc((100% - 40px) / 2 - 0.1px);
+          min-width: 300px;
+          padding: 20px;
+        }
+        .choose-size-and-color-container {
+          width: calc((100% - 40px) / 2 - 0.1px);
+          min-width: 300px;
+          padding: 20px;
+        }
         .sku-introduction-and-QA-container {
           width: 100%;
         }

@@ -1,7 +1,32 @@
-const SkuPictures = ({ imgUrls }) => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Navigation, Pagination } from "swiper";
+import "swiper/css";
+
+const SkuPictures = ({ imgList }) => {
   return (
-    <div>
-      <img src="https://www.nitori-net.jp/ecstatic/image/product/7565681/756568101.jpg?ccp=1659139200&imwidth=415&imdensity=1&ts=20220307110701388" />
+    <div className="img-swiper-container">
+      <Swiper
+        slidesPerView={4}
+        grid={{
+          rows: 2,
+        }}
+        spaceBetween={30}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Grid, Navigation, Pagination]}
+        className="mySwiper"
+      >
+        {imgList.map((img, index) => {
+          return (
+            <SwiperSlide key={index}>
+              {/* <img src={img} /> */}
+              {index}
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 };
