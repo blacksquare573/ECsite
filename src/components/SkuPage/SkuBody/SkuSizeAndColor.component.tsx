@@ -1,5 +1,25 @@
-import { Fragment } from "react";
+import { Fragment, ChangeEventHandler } from "react";
+import { color } from "../SkuPage.component";
 import "./SkuSizeAndColor.styles.css";
+
+type stringSetter = React.Dispatch<React.SetStateAction<string>>;
+type SkuSizeAndColorProps = {
+  size: string;
+  setSize: stringSetter;
+  sizeList: string[];
+  colorNow: string;
+  setColor: stringSetter;
+  colorList: color[];
+  catchcopy: string;
+  price: number;
+  point: number;
+  featureIconList: string[];
+  skuId: number;
+  sizeDetail: string;
+  material: string;
+  weight: string;
+  warranty: string;
+};
 
 const SkuSizeAndColor = ({
   size,
@@ -17,12 +37,12 @@ const SkuSizeAndColor = ({
   material,
   weight,
   warranty,
-}) => {
-  const selectSizeHandler = (event) => {
+}: SkuSizeAndColorProps) => {
+  const selectSizeHandler: ChangeEventHandler<HTMLSelectElement> = (event) => {
     setSize(event.target.value);
   };
 
-  const selectColorHandler = (event) => {
+  const selectColorHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
     setColor(event.target.value);
   };
 

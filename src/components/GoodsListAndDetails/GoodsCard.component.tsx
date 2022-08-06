@@ -1,5 +1,17 @@
 import "./GoodsCard.styles.css";
-const GoodsCard = ({ item }) => {
+
+type goodsCardProps = {
+  item: {
+    goodsCoverImg: string;
+    goodsName: string;
+    sellingPrice: number;
+    goodsDetailContent: string;
+    colorImgUrlList: string[];
+    detailsImgUrlList: string[];
+  };
+};
+
+const GoodsCard = ({ item }: goodsCardProps) => {
   const {
     goodsCoverImg,
     goodsName,

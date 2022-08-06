@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import "./PageChangeBar.styles.css";
 
+type pageChangeBarProps = {
+  pageNow: number;
+  numsOfItems: number;
+  categoryName: string;
+  firstCategoryName: string;
+  secondCategoryName: string;
+};
+
 const PageChangeBar = ({
   pageNow,
   numsOfItems,
   categoryName,
   firstCategoryName,
   secondCategoryName,
-}) => {
+}: pageChangeBarProps) => {
   //   console.log(pageNow, numsOfItems);
   const pageTotal = Math.ceil(numsOfItems / 10);
 

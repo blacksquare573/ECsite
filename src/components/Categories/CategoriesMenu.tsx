@@ -4,8 +4,23 @@ import axios from "axios";
 import "./CategoriesMenu.css";
 import { Outlet } from "react-router-dom";
 
+export type categories = {
+  categoryId: number;
+  categoryLevel: number;
+  parentId: number;
+  categoryName: string;
+  categoryRank: number;
+  isDeleted: number;
+  createTime: string;
+  createUser: number;
+  updateTime: string;
+  updateUser: number;
+  categoryImg: string;
+  subList: categories[];
+};
+
 const CategoriesMenu = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<categories[]>([]);
 
   useEffect(() => {
     axios.get("http://localhost:8080/ecGoodsCategories").then((response) => {

@@ -4,9 +4,14 @@ import {
   detailFilterListContext,
   setDetailFilterListContext,
   // getGoodsListContext,
-} from "../GoodsListAndDetails/Background.component";
+} from "./Background.component";
 
-const SubDetail = ({ name, value }) => {
+type subDetailProps = {
+  name: string;
+  value: number;
+};
+
+const SubDetail = ({ name, value }: subDetailProps) => {
   const detailFilterList = useContext(detailFilterListContext);
   const setDetailFilterList = useContext(setDetailFilterListContext);
   // const getGoodsList = useContext(getGoodsListContext);

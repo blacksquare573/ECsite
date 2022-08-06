@@ -1,19 +1,27 @@
 import "./ChooseDetail.styles.css";
 import GoodsDetails from "./GoodsDetails.component";
+import { goodsDetailsList } from "./Background.component";
+
+type stringListSetter = React.Dispatch<React.SetStateAction<string[]>>;
+type chooseDetailProps = {
+  goodsDetailsList: goodsDetailsList[];
+  detailFilterList: string[];
+  setDetailFilterList: stringListSetter;
+};
 
 const ChooseDetail = ({
   goodsDetailsList,
   detailFilterList,
   setDetailFilterList,
-}) => {
-  const clearThisDetail = (detail) => {
-    let result = detailFilterList.slice();
+}: chooseDetailProps) => {
+  const clearThisDetail: (detail: string) => void = (detail) => {
+    let result: string[] = detailFilterList.slice();
     // console.log(detail);
     result.splice(result.indexOf(detail), 1);
     setDetailFilterList(result);
   };
 
-  const clearAllDetails = () => {
+  const clearAllDetails: () => void = () => {
     setDetailFilterList([]);
   };
 

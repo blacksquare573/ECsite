@@ -1,16 +1,25 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./SkuPictures.styles.css";
 
-const SkuPictures = ({ imgList }) => {
+type SkuPicturesProps = {
+  imgList: string[];
+};
+
+const SkuPictures = ({ imgList }: SkuPicturesProps) => {
   return (
     <div className="img-swiper-container">
       <Swiper
         slidesPerView={4}
+        slidesPerGroup={4}
         grid={{
           rows: 2,
         }}
-        spaceBetween={30}
+        spaceBetween={10}
         navigation={true}
         pagination={{
           clickable: true,
@@ -26,6 +35,7 @@ const SkuPictures = ({ imgList }) => {
             </SwiperSlide>
           );
         })}
+        <SwiperSlide>10</SwiperSlide>
       </Swiper>
     </div>
   );

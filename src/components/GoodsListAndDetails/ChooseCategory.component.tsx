@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import "./ChooseCategory.styles.css";
 import SubCategory from "./SubCategory.component";
+import { subCategoryNameAndNumsOfItems } from "./Background.component";
+
+type chooseCategoryProps = {
+  subCategoryNameAndNumsOfItems: subCategoryNameAndNumsOfItems[];
+  firstCategoryName: string;
+  categoryName: string;
+};
 
 const ChooseCategory = ({
   subCategoryNameAndNumsOfItems,
   firstCategoryName,
   categoryName,
-}) => {
+}: chooseCategoryProps) => {
   return (
     <div className="choose-category-container">
       <h2 className="choose-category-title">カテゴリを選択</h2>

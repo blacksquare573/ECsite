@@ -1,5 +1,9 @@
 import "./CategoryTitle.styles.css";
-const CategoryTitle = ({ categoryName }) => {
+type categoryTitleProps = {
+  categoryName: string;
+};
+
+const CategoryTitle = ({ categoryName }: categoryTitleProps) => {
   return (
     <div className="category-main-title-container">
       <h1 className="category-main-title">{categoryName}</h1>

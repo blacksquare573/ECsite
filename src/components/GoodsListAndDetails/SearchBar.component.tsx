@@ -1,7 +1,21 @@
 import "./SearchBar.styles.css";
+import { ChangeEventHandler } from "react";
 
-const SearchBar = ({ pageNow, numsOfItems, orderBy, setOrderBy }) => {
-  const sortBy = (event) => {
+type stringSetter = React.Dispatch<React.SetStateAction<string>>;
+type searchBarProps = {
+  pageNow: number;
+  numsOfItems: number;
+  orderBy: string;
+  setOrderBy: stringSetter;
+};
+
+const SearchBar = ({
+  pageNow,
+  numsOfItems,
+  orderBy,
+  setOrderBy,
+}: searchBarProps) => {
+  const sortBy: ChangeEventHandler<HTMLSelectElement> = (event) => {
     console.log(event.target.value);
     setOrderBy(event.target.value);
   };

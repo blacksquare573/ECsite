@@ -10,6 +10,11 @@ import { useEffect } from "react";
 import CartBackground from "./PutIntoTheCart/CartBackground.component";
 import Swiper from "../GoodsListAndDetails/Swiper.component";
 
+export type color = {
+  color: string;
+  colorImg: string;
+};
+
 const SkuPage = () => {
   const param = useParams();
   const goodsId = param.goodsId;
@@ -30,10 +35,10 @@ const SkuPage = () => {
   const [stock, setStock] = useState(0);
   const [deliveryTime, setDeliveryTime] = useState("");
   const [deliveryImg, setDeliveryImg] = useState("");
-  const [featureIconList, setFeatureIconList] = useState([]);
-  const [imgList, setImgList] = useState([]);
-  const [sizeList, setSizeList] = useState([]);
-  const [colorList, setColorList] = useState([]);
+  const [featureIconList, setFeatureIconList] = useState<string[]>([]);
+  const [imgList, setImgList] = useState<string[]>([]);
+  const [sizeList, setSizeList] = useState<string[]>([]);
+  const [colorList, setColorList] = useState<color[]>([]);
 
   useEffect(() => {
     axios
@@ -69,7 +74,7 @@ const SkuPage = () => {
     <Fragment>
       <div className="sku-body-area">
         <div className="swiper-container">
-          <Swiper goodsName={goodsName} />
+          {/* <Swiper goodsName={goodsName} /> */}
         </div>
         <div className="sku-title-container">
           <Skutitle skuName={skuName} skuId={skuId} />

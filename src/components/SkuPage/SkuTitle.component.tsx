@@ -1,7 +1,12 @@
 import { Fragment } from "react";
 import "./SkuTitle.styles.css";
 
-const Skutitle = ({ skuName, skuId }) => {
+type SkuTitleProps = {
+  skuName: string;
+  skuId: number;
+};
+
+const Skutitle = ({ skuName, skuId }: SkuTitleProps) => {
   return (
     <Fragment>
       <div className="sku-name-container">

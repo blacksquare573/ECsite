@@ -1,7 +1,12 @@
 import "./GoodsDetails.styles.css";
 import SubDetail from "./SubDetail.component";
+import { goodsDetailsList } from "./Background.component";
 
-const GoodsDetails = ({ goodsDetails }) => {
+type goodsDetailsProps = {
+  goodsDetails: goodsDetailsList;
+};
+
+const GoodsDetails = ({ goodsDetails }: goodsDetailsProps) => {
   const { name, subDetailsList } = goodsDetails;
   // console.log(
   //   Object.entries(subDetailsList).map(

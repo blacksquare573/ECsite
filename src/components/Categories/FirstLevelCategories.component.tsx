@@ -1,8 +1,13 @@
 import SecondLevelCategories from "./SecondLevelCategories.component";
 import "./FirstLevelCategories.css";
 import { Link } from "react-router-dom";
+import { categories } from "./CategoriesMenu";
 
-const FirstLevelCategories = ({ first }) => {
+type firstLevelCategoriesProps = {
+  first: categories;
+};
+
+const FirstLevelCategories = ({ first }: firstLevelCategoriesProps) => {
   const { categoryName, subList, categoryImg } = first;
 
   return (

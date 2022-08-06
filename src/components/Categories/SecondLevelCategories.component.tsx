@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import "./SecondLevelCategories.css";
+import { categories } from "./CategoriesMenu";
 
-const SecondLevelCategories = ({ second, firstLevelName }) => {
+type secondLevelCategoriesProps = {
+  second: categories;
+  firstLevelName: string;
+};
+
+const SecondLevelCategories = ({
+  second,
+  firstLevelName,
+}: secondLevelCategoriesProps) => {
   const { categoryName } = second;
 
   return (

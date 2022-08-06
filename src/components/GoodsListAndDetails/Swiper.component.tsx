@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import "./Swiper.styles.css";
 
-const Swiper = ({ categoryName, firstCategoryName, secondCategoryName }) => {
+type swiperProps = {
+  categoryName: string;
+  firstCategoryName: string;
+  secondCategoryName: string;
+};
+
+const Swiper = ({
+  categoryName,
+  firstCategoryName,
+  secondCategoryName,
+}: swiperProps) => {
   return (
     <div className="swiper-bar-container">
       <ol className="swiper-bar">
