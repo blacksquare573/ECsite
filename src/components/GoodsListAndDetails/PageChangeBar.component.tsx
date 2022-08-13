@@ -19,7 +19,7 @@ const PageChangeBar = ({
   //   console.log(pageNow, numsOfItems);
   const pageTotal = Math.ceil(numsOfItems / 10);
 
-  let pageButtonList = [];
+  let pageButtonList: number[] = [];
   for (var i = 1; i <= pageTotal; i++) {
     pageButtonList.push(i);
   }

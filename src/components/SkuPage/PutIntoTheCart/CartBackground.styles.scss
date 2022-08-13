@@ -1,0 +1,68 @@
+.cart-order-info-container {
+  padding: 30px;
+  .cart-order-info {
+    border-bottom: 1px solid #dbdbdb;
+  }
+  .cart-order-info dt {
+    float: left;
+    clear: left;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #dbdbdb;
+  }
+  .cart-order-info dd {
+    font-weight: bold;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-align: right;
+    padding: 10px 0;
+    border-top: 1px solid #dbdbdb;
+  }
+  .cart-order-info p {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: rgb(128, 128, 128);
+  }
+  .cart-img-container {
+    margin-top: 20px;
+  }
+  .cart-img-container img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: 0;
+    height: auto;
+  }
+  .cart-goods-amount {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .cart-goods-amount dt {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 25px;
+  }
+  .cart-goods-amount dd {
+    display: block;
+  }
+  .cart-goods-amount input {
+    max-width: calc(0.65em * 5 + 30px);
+    width: 100%;
+    padding: 8px 11px 7px;
+    text-align: left;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+  }
+  .price-container {
+    margin-top: 20px;
+    display: flex;
+    .price-text {
+      font-size: 2.5rem;
+    }
+    .price-text > span {
+      font-size: 1rem;
+    }
+  }
+}

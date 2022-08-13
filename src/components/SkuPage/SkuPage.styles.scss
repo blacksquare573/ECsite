@@ -19,6 +19,7 @@
       .sku-body-left-flexbox {
         display: flex;
         flex-wrap: wrap;
+        height: 100%;
         .pictures-container {
           width: calc((100% - 40px) / 2 - 0.1px);
           min-width: 300px;
@@ -30,20 +31,102 @@
           padding: 20px;
         }
         .sku-introduction-and-QA-container {
+          display: flex;
+          flex-wrap: wrap;
           width: 100%;
+          .sku-introduction-container {
+            width: calc((100% - 40px) / 2 - 0.1px);
+            padding: 20px;
+            height: 800px;
+            background-color: rgb(214, 198, 168);
+          }
+          .sku-QA-review-container {
+            width: calc((100% - 40px) / 2 - 0.1px);
+            padding: 20px;
+          }
         }
       }
     }
     .sku-body-right {
       display: inline-block;
       vertical-align: top;
-      background-color: aquamarine;
+      background-color: #f7f7f7;
       width: 290px;
       margin-left: 40px;
+      position: sticky;
+      top: 40px;
     }
   }
-  .put-into-the-cart-container {
-    position: sticky;
-    top: 40px;
-  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

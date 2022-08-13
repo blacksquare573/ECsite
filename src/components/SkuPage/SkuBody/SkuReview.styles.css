@@ -1,0 +1,102 @@
+.reviews-container {
+  margin-top: 20px;
+}
+.reviews-container .review-score-container {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: flex-end;
+}
+.reviews-container .review-score-container .review-average-score-area {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10px 10px 5px 10px;
+  text-align: center;
+  vertical-align: top;
+}
+.reviews-container .review-score-container .review-average-score-area .average-score {
+  padding: 5px 0;
+  font-size: 26px;
+  font-weight: bold;
+  color: #eb6157;
+}
+.reviews-container .review-score-container .review-stars-area {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 2px 2px 2px 2px;
+  vertical-align: top;
+  width: 100%;
+}
+.reviews-container .review-score-container .review-stars-area .review-graph-row-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.reviews-container .review-score-container .review-stars-area .review-graph-row-container .meter-visible-bar {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #e3e6e6;
+  background-color: #dbdbdb;
+  height: 10px;
+  width: calc(100% - 80px - 4em);
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.reviews-container .review-score-container .review-stars-area .review-graph-row-container .meter-visible-bar .meter-bar {
+  transition: width 0.5s ease;
+  float: left;
+  font-size: 0;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: inset -2px 0 0 -1px #a4433c, inset 0 0 0 1px #8d3a34;
+  background-color: #eb6157;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.reviews-container .review-score-container .review-stars-area .review-graph-row-container .review-score-num {
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.reviews-container .review-stars-and-nums {
+  text-align: center;
+  margin-top: -12px !important;
+  margin-bottom: 12px;
+}
+.reviews-container .write-review-container {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.reviews-container .write-review-container .write-review-button {
+  width: auto;
+  min-width: 106px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: normal;
+  display: inline-flex;
+  padding: 5px 30px !important;
+  transition: background-color 0.2s;
+  vertical-align: middle;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #009e96;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.reviews-container .review-list-container .comment-open-button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.reviews-container .review-list-container .comment-open-button-container .comment-open-button {
+  cursor: pointer;
+  color: #333;
+}
+.reviews-container .review-list-container .comment-open-button-container p {
+  text-align: center !important;
+}/*# sourceMappingURL=SkuReview.styles.css.map */

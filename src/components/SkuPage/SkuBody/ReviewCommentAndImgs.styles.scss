@@ -1,0 +1,41 @@
+.review-list {
+  padding: 20px 0;
+  border-bottom: 1px dashed #dbdbdb;
+  .stars-and-username-container {
+    display: flex;
+    flex-wrap: wrap;
+    .review-username {
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  }
+  .review-sku-name {
+    margin-top: 10px;
+  }
+  .review-title {
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .review-img-list {
+    margin-top: 15px;
+    margin-left: -15px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    .review-img-container {
+      width: 84px;
+      margin-bottom: 15px;
+      margin-left: 15px;
+    }
+    .review-img-container img {
+      cursor: pointer;
+      width: 100% !important;
+      max-width: 100%;
+      vertical-align: bottom;
+      border: 0;
+      height: auto;
+    }
+  }
+}
