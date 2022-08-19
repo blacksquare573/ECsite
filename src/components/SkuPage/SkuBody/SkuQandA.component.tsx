@@ -7,6 +7,7 @@ type skuQandAProps = {
   goodsId: number;
   QandAList: QandA[];
   setQandAList: React.Dispatch<React.SetStateAction<QandA[]>>;
+  orderBy: string;
   setOrderBy: React.Dispatch<React.SetStateAction<string>>;
   questionPageNum: number;
   setQuestionPageNum: React.Dispatch<React.SetStateAction<number>>;
@@ -17,6 +18,7 @@ const SkuQandA = ({
   goodsId,
   QandAList,
   setQandAList,
+  orderBy,
   setOrderBy,
   questionPageNum,
   setQuestionPageNum,
@@ -25,6 +27,7 @@ const SkuQandA = ({
   const sortHandler: ChangeEventHandler<HTMLSelectElement> = (event) => {
     console.log(event.target.value);
     setOrderBy(event.target.value);
+    setQuestionPageNum(1);
   };
 
   const pageTotal = QandAList[0]
@@ -43,6 +46,7 @@ const SkuQandA = ({
         .post(`http://localhost:8080/QandA`, {
           goodsId: goodsId,
           question: question,
+          orderBy: orderBy,
         })
         .then((response) => {
           setQandAList(response.data.data);
@@ -51,6 +55,21 @@ const SkuQandA = ({
       questionRef.current!.value = "";
     } else {
       alert("質問を入力してください");
+    }
+  };
+
+  const addLike: (
+    goodsId: number,
+    questionId: number,
+    orderBy: string
+  ) => void = (goodsId, questionId) => {
+    if (goodsId !== 0) {
+      axios
+        .post(`http://localhost:8080/QandA/${goodsId}/${questionId}/${orderBy}`)
+        .then((response) => {
+          setQandAList(response.data.data);
+          setQuestionPageNum(1);
+        });
     }
   };
 
@@ -96,8 +115,15 @@ const SkuQandA = ({
             <div className="answer-info-container">
               <div className="answer-text">A.{QandA.answer}</div>
               <div className="answer-date">回答日 {QandA.aDate}</div>
-              <div className="answer-likes">
-                参考になった（{QandA.likes}人）
+              <div className="answer-likes-container">
+                <a
+                  className="answer-likes"
+                  onClick={(event) =>
+                    addLike(goodsId, QandA.questionId, orderBy)
+                  }
+                >
+                  参考になった（{QandA.likes}人）
+                </a>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ import "swiper/css/grid";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./SkuPictures.styles.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 type SkuPicturesProps = {
   imgList: string[];

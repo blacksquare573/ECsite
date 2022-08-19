@@ -55,9 +55,16 @@
 .question-unit .answer-info-container {
   margin: 10px 20px 0 10px;
 }
-.question-unit .answer-info-container .answer-likes {
+.question-unit .answer-info-container .answer-likes-container {
   line-height: 1;
   margin-top: 15px;
+}
+.question-unit .answer-info-container .answer-likes-container .answer-likes {
+  color: #000000;
+  cursor: pointer;
+}
+.question-unit .answer-info-container .answer-likes-container:hover {
+  text-decoration: underline;
 }
 
 .question-page-caution-container .question-page-rules {

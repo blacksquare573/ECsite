@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render skuTitle 1`] = `
+Array [
+  <div
+    className="sku-name-container"
+  >
+    <h1
+      className="sku-name"
+    >
+      両面使える敷きパッド　シングル(NクールWSP n-s GY S)
+    </h1>
+  </div>,
+  <div
+    className="sku-code-and-score-container"
+  >
+    <div
+      className="sku-code-container"
+    >
+      <p
+        className="sku-code"
+      >
+        商品コード 
+        10011
+      </p>
+    </div>
+    <div
+      className="sku-score-container"
+    >
+      <p
+        className="sku-score"
+      >
+        <span
+          className="score-stars"
+        >
+          平均評価4.1点
+        </span>
+        <span
+          className="score-reviews"
+        >
+          （97）
+        </span>
+      </p>
+    </div>
+  </div>,
+]
+`;

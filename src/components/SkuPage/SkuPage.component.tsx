@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect, useRef } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import "./SkuPage.styles.css";
-import Skutitle from "./SkuTitle.component";
+import SkuTitle from "./SkuTitle.component";
 import SkuPictures from "./SkuBody/SkuPictures.component";
 import SkuSizeAndColor from "./SkuBody/SkuSizeAndColor.component";
 import CartBackground from "./PutIntoTheCart/CartBackground.component";
@@ -161,7 +161,7 @@ const SkuPage = () => {
           {/* <Swiper goodsName={goodsName} /> */}
         </div>
         <div className="sku-title-container">
-          <Skutitle skuName={skuName} skuId={skuId} />
+          <SkuTitle skuName={skuName} skuId={skuId} />
         </div>
         <div className="sku-body-container">
           <div className="sku-body-left">
@@ -199,6 +199,7 @@ const SkuPage = () => {
                     goodsId={goodsId}
                     QandAList={QandAList}
                     setQandAList={setQandAList}
+                    orderBy={orderBy}
                     setOrderBy={setOrderBy}
                     questionPageNum={questionPageNum}
                     setQuestionPageNum={setQuestionPageNum}

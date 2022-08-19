@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import "./SkuTitle.styles.css";
 
-type SkuTitleProps = {
+export type SkuTitleProps = {
   skuName: string;
   skuId: number;
 };
 
-const Skutitle = ({ skuName, skuId }: SkuTitleProps) => {
+const SkuTitle = ({ skuName, skuId }: SkuTitleProps) => {
   return (
     <Fragment>
       <div className="sku-name-container">
@@ -26,4 +26,4 @@ const Skutitle = ({ skuName, skuId }: SkuTitleProps) => {
     </Fragment>
   );
 };
-export default Skutitle;
+export default SkuTitle;

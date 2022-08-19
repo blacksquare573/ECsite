@@ -49,9 +49,16 @@
   }
   .answer-info-container {
     margin: 10px 20px 0 10px;
-    .answer-likes {
+    .answer-likes-container {
       line-height: 1;
       margin-top: 15px;
+      .answer-likes {
+        color: #000000;
+        cursor: pointer;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
